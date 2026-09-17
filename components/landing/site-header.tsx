@@ -22,17 +22,17 @@ export function SiteHeader() {
 
   return (
     <header
-      className={`fixed left-0 right-0 top-0 z-50 transition-colors transition-shadow duration-300 ease ${
+      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-500 ease-out ${
         scrolled
-          ? "border-b border-primary/10 bg-surface/95 shadow-sm backdrop-blur"
-          : "border-b border-transparent bg-transparent shadow-none"
+          ? "bg-surface/95 shadow-sm backdrop-blur-md"
+          : "bg-surface/0 shadow-none backdrop-blur-0"
       }`}
     >
       <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link
           href="/"
           className={`text-xl font-extrabold tracking-tight transition-colors duration-300 ${
-            scrolled ? "text-primary" : "text-cta-foreground"
+            scrolled ? "text-primary" : "text-white"
           }`}
         >
           Fixeado
@@ -45,7 +45,7 @@ export function SiteHeader() {
               className={`rounded-md px-3 py-2 text-sm font-medium transition-colors duration-300 ${
                 scrolled
                   ? "text-muted hover:bg-background hover:text-primary"
-                  : "text-cta-foreground/90 hover:bg-white/10 hover:text-cta-foreground"
+                  : "text-white/90 hover:bg-white/10 hover:text-white"
               }`}
             >
               {link.label}
@@ -53,11 +53,21 @@ export function SiteHeader() {
           ))}
           <Link
             href="/#cotizar"
-            className="ml-1 rounded-md bg-cta px-4 py-2 text-sm font-semibold text-cta-foreground transition-opacity hover:opacity-90"
+            className="ml-1 rounded-md bg-cta px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
           >
             Cotizar
           </Link>
         </nav>
+      </div>
+      <div className="flex justify-center pb-1">
+        <div
+          aria-hidden="true"
+          className={`transition-all duration-500 ease-out ${
+            scrolled
+              ? "h-px w-full bg-primary/10 opacity-100"
+              : "h-[3px] w-40 rounded-full bg-black opacity-80 shadow-[0_1px_2px_rgba(0,0,0,0.25)]"
+          }`}
+        />
       </div>
     </header>
   );
