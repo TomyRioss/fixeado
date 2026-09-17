@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { SectionHeading } from "@/components/landing/section-heading";
 import { HeroSearch } from "@/components/landing/hero-search";
 import { HeroDevices } from "@/components/landing/hero-devices";
@@ -111,16 +110,6 @@ export default function ClientsPage() {
   return (
     <main className="flex flex-col">
       <section className="relative flex min-h-[100svh] w-full overflow-hidden bg-cta">
-        <Image
-          src="https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=1920&auto=format&fit=crop"
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover"
-        />
-        <div aria-hidden="true" className="absolute inset-0 bg-cta/80" />
-        <div aria-hidden="true" className="absolute inset-0 bg-primary/40" />
         <div className="relative mx-auto grid w-full max-w-6xl flex-1 grid-cols-1 items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:gap-12">
           <div className="flex w-full flex-col items-center justify-center gap-5 text-center lg:items-start lg:text-left">
             <h1 className="text-center text-3xl font-extrabold tracking-tight text-cta-foreground sm:text-5xl lg:text-left">
