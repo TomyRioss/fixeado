@@ -52,7 +52,7 @@ export function HeroSearch() {
           </div>
         )}
       </div>
-      <p className="mt-3 text-center text-sm text-primary/80">
+      <p className="mt-3 text-center text-sm text-white/90">
         Búsqueda orientativa sin compromiso.
       </p>
     </form>
