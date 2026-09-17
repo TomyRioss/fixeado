@@ -1,15 +1,17 @@
-@import "tailwindcss";
+@import 'tailwindcss' source(none);
+@source '../app';
+@source '../components';
 
 @theme {
-  --color-primary: #0b1b33;
+  --color-primary: #0a0a0a;
   --color-primary-foreground: #ffffff;
-  --color-accent: #00c389;
-  --color-accent-foreground: #0b1b33;
-  --color-cta: #ffb020;
-  --color-cta-foreground: #0b1b33;
-  --color-background: #f6f8fb;
+  --color-accent: #ffcc00;
+  --color-accent-foreground: #0a0a0a;
+  --color-cta: #ffcc00;
+  --color-cta-foreground: #0a0a0a;
+  --color-background: #ffffff;
   --color-surface: #ffffff;
-  --color-muted: #5b6b82;
+  --color-muted: #555555;
 }
 
 @layer base {
