@@ -1,0 +1,3 @@
+monitor.glb laptop.glb Kenney CC0 kenney.nl 
+phone.glb Quaternius CC0 poly.pizza 
+tablet.glb Poly by Google CC-BY-4.0 poly.pizza 
