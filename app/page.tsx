@@ -112,7 +112,7 @@ export default function ClientsPage() {
       <section className="relative flex min-h-[100svh] w-full overflow-hidden bg-cta">
         <div className="relative mx-auto grid w-full max-w-6xl flex-1 grid-cols-1 items-center gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:gap-12">
           <div className="flex w-full flex-col items-center justify-center gap-5 text-center lg:items-start lg:text-left">
-            <h1 className="text-center text-3xl font-extrabold tracking-tight text-cta-foreground sm:text-5xl lg:text-left">
+            <h1 className="text-center text-3xl font-extrabold tracking-tight text-white sm:text-5xl lg:text-left">
               Arregla tu celular sin salir de casa.
             </h1>
             <HeroSearch />
