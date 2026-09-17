@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Search } from "lucide-react";
 import { TextType } from "@/components/landing/text-type";
 
 const FAILURE_EXAMPLES = [
@@ -24,6 +25,10 @@ export function HeroSearch() {
         Buscar por zona o falla
       </label>
       <div className="relative">
+        <Search
+          aria-hidden="true"
+          className="pointer-events-none absolute left-4 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-muted"
+        />
         <input
           id="hero-search"
           name="q"
@@ -32,12 +37,12 @@ export function HeroSearch() {
           value={value}
           onChange={(event) => setValue(event.target.value)}
           aria-label="Buscar por zona o falla"
-          className="h-13 w-full rounded-xl border border-primary/15 bg-surface px-5 py-4 text-base text-primary shadow-lg placeholder-transparent focus:border-primary focus:outline-none"
+          className="h-13 w-full rounded-xl border border-primary/15 bg-surface py-4 pl-11 pr-5 text-base text-primary shadow-lg placeholder-transparent focus:border-primary focus:outline-none"
         />
         {value === "" && (
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 flex items-center overflow-hidden px-5 text-base text-muted"
+            className="pointer-events-none absolute inset-0 flex items-center overflow-hidden pl-11 pr-5 text-base text-muted"
           >
             <TextType
               text={[...FAILURE_EXAMPLES]}
