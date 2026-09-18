@@ -21,14 +21,15 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <header
-      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-500 ease-out ${
-        scrolled
-          ? "bg-surface/95 shadow-sm backdrop-blur-md"
-          : "bg-surface/0 shadow-none backdrop-blur-0"
-      }`}
-    >
-      <div className="mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
+    <header className="fixed left-0 right-0 top-0 z-50">
+      {/* Bg con fade suave de arriba hacia abajo (opacity + translateY: el blur no interpola) */}
+      <div
+        aria-hidden="true"
+        className={`absolute inset-0 bg-surface/95 shadow-sm backdrop-blur-md transition-all duration-500 ease-out ${
+          scrolled ? "translate-y-0 opacity-100" : "-translate-y-3 opacity-0"
+        }`}
+      />
+      <div className="relative mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link
           href="/"
           className={`text-xl font-extrabold tracking-tight transition-colors duration-300 ${
@@ -59,16 +60,13 @@ export function SiteHeader() {
           </Link>
         </nav>
       </div>
-      <div className="flex justify-center pb-1">
-        <div
-          aria-hidden="true"
-          className={`transition-all duration-500 ease-out ${
-            scrolled
-              ? "h-px w-full bg-primary/10 opacity-100"
-              : "h-[3px] w-40 rounded-full bg-black opacity-80 shadow-[0_1px_2px_rgba(0,0,0,0.25)]"
-          }`}
-        />
-      </div>
+      {/* Hairline inferior: solo fade de opacidad, sin morph de tamaño */}
+      <div
+        aria-hidden="true"
+        className={`absolute inset-x-0 bottom-0 h-px bg-primary/10 transition-opacity duration-500 ease-out ${
+          scrolled ? "opacity-100" : "opacity-0"
+        }`}
+      />
     </header>
   );
 }
