@@ -39,7 +39,7 @@ export function SiteHeader() {
         <Link
           href="/"
           className={`text-xl font-extrabold tracking-tight transition-colors duration-300 ${
-            solid ? "text-primary" : "text-white"
+            solid ? "text-black" : "text-white"
           }`}
         >
           Fixeado
@@ -51,7 +51,7 @@ export function SiteHeader() {
               href={link.href}
               className={`rounded-md px-3 py-2 text-sm font-medium transition-colors duration-300 ${
                 solid
-                  ? "text-muted hover:bg-background hover:text-primary"
+                  ? "text-black hover:bg-black/5 hover:text-black"
                   : "text-white/90 hover:bg-white/10 hover:text-white"
               } ${link.underline ? "underline decoration-cta decoration-2 underline-offset-8" : ""}`}
             >
