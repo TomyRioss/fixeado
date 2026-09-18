@@ -166,7 +166,7 @@ export default function ClientsPage() {
         </div>
       </section>
 
-      <section id="garantia" className="relative overflow-hidden bg-primary">
+      <section id="garantia" className="relative scroll-mt-16 overflow-hidden bg-primary">
         <span
           aria-hidden="true"
           className="absolute -left-24 top-0 h-72 w-72 rounded-full bg-accent/15 blur-3xl"
