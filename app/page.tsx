@@ -175,7 +175,19 @@ export default function ClientsPage() {
           aria-hidden="true"
           className="absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-cta/15 blur-3xl"
         />
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-8 select-none text-center text-[18vw] font-extrabold leading-none tracking-tight text-white/[0.04] lg:text-[11rem]"
+        >
+          GARANTÍA
+        </span>
         <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 py-20 sm:px-6 sm:py-24">
+          <span className="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-cta text-cta-foreground shadow-[0_16px_40px_-16px_rgba(255,204,0,0.7)]">
+            <svg viewBox="0 0 24 24" className="h-8 w-8 fill-none stroke-current stroke-2">
+              <path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z" strokeLinecap="round" strokeLinejoin="round" />
+              <path d="M9 12l2.2 2.2L15.5 10" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </span>
           <SectionHeading
             tone="dark"
             eyebrow="Garantía Fixeado"
