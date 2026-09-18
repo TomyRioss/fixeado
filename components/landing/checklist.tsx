@@ -10,7 +10,7 @@ export function Checklist({ items, tone = "light" }: ChecklistProps) {
     <ul
       className={
         dark
-          ? "grid grid-cols-1 gap-x-12 sm:grid-cols-2"
+          ? "grid grid-cols-1"
           : "grid grid-cols-1 gap-4 sm:grid-cols-2"
       }
     >

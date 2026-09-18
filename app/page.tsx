@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { SectionHeading } from "@/components/landing/section-heading";
 import { HeroSearch } from "@/components/landing/hero-search";
 import { StepsGrid } from "@/components/landing/steps-grid";
@@ -181,19 +182,27 @@ export default function ClientsPage() {
         >
           GARANTÍA
         </span>
-        <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 py-20 sm:px-6 sm:py-24">
-          <span className="mx-auto inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-cta text-cta-foreground shadow-[0_16px_40px_-16px_rgba(255,204,0,0.7)]">
-            <svg viewBox="0 0 24 24" className="h-8 w-8 fill-none stroke-current stroke-2">
-              <path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M9 12l2.2 2.2L15.5 10" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </span>
-          <SectionHeading
-            tone="dark"
-            eyebrow="Garantía Fixeado"
-            title="Garantía de funcionamiento en cada orden"
-            description="Recogida y envío registrados, diagnóstico confirmado y respaldo por escrito."
-          />
+        <div className="relative mx-auto grid w-full max-w-6xl grid-cols-1 items-start gap-12 px-4 py-20 sm:px-6 sm:py-24 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
+          <div className="flex flex-col items-start gap-5 lg:sticky lg:top-24">
+            <span className="inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-cta text-cta-foreground shadow-[0_16px_40px_-16px_rgba(255,204,0,0.7)]">
+              <svg viewBox="0 0 24 24" className="h-8 w-8 fill-none stroke-current stroke-2">
+                <path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6l7-3z" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M9 12l2.2 2.2L15.5 10" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </span>
+            <h2 className="text-balance text-3xl font-extrabold leading-[1.1] tracking-[-0.02em] text-primary-foreground sm:text-4xl">
+              Garantía de funcionamiento en cada orden
+            </h2>
+            <p className="max-w-md text-pretty text-base leading-7 text-primary-foreground/70 sm:text-lg sm:leading-8">
+              Recogida y envío registrados, diagnóstico confirmado y respaldo por escrito.
+            </p>
+            <Link
+              href="/#cotizar"
+              className="mt-1 rounded-full bg-cta px-7 py-3 text-sm font-extrabold text-cta-foreground shadow-[0_12px_28px_-12px_rgba(255,204,0,0.8)] transition-all duration-300 hover:-translate-y-0.5"
+            >
+              Cotizar reparación
+            </Link>
+          </div>
           <Checklist items={GUARANTEE_ITEMS} tone="dark" />
         </div>
       </section>
