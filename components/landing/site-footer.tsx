@@ -39,7 +39,7 @@ export function SiteFooter() {
             </li>
           </ul>
         </nav>
-        <div className="space-y-3">
+        <div id="contacto" className="space-y-3 scroll-mt-20">
           <p className="text-sm font-semibold uppercase tracking-wide text-primary-foreground/70">
             Contacto
           </p>

@@ -4,8 +4,10 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const NAV_LINKS = [
-  { label: "Clientes", href: "/" },
-  { label: "Afiliados", href: "/afiliados" },
+  { label: "Inicio", href: "/#inicio", underline: false },
+  { label: "Contacto", href: "/#contacto", underline: false },
+  { label: "Garantía", href: "/#garantia", underline: false },
+  { label: "Soy un Taller", href: "/afiliados", underline: true },
 ] as const;
 
 export function SiteHeader() {
@@ -47,7 +49,7 @@ export function SiteHeader() {
                 scrolled
                   ? "text-muted hover:bg-background hover:text-primary"
                   : "text-white/90 hover:bg-white/10 hover:text-white"
-              }`}
+              } ${link.underline ? "underline decoration-cta decoration-2 underline-offset-8" : ""}`}
             >
               {link.label}
             </Link>
@@ -56,7 +58,7 @@ export function SiteHeader() {
             href="/#cotizar"
             className="ml-1 rounded-md bg-cta px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
           >
-            Cotizar
+            Ingresar ahora
           </Link>
         </nav>
       </div>

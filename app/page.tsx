@@ -1,7 +1,8 @@
 import { SectionHeading } from "@/components/landing/section-heading";
 import { HeroSearch } from "@/components/landing/hero-search";
 import { StepsGrid } from "@/components/landing/steps-grid";
-import { ReviewCard, type ReviewItem } from "@/components/landing/review-card";
+import type { ReviewItem } from "@/components/landing/review-card";
+import { ReviewsSlider } from "@/components/landing/reviews-slider";
 import { Checklist } from "@/components/landing/checklist";
 import { FaqList, type FaqItem } from "@/components/landing/faq-list";
 import { CtaBand } from "@/components/landing/cta-band";
@@ -108,13 +109,36 @@ const FAQS: FaqItem[] = [
 export default function ClientsPage() {
   return (
     <main className="flex flex-col">
-      <section className="relative flex min-h-[100svh] w-full overflow-hidden bg-cta">
-        <div className="relative mx-auto flex w-full max-w-3xl flex-1 flex-col items-center justify-center gap-6 px-4 py-16 text-center sm:px-6">
+      <section id="inicio" className="relative flex min-h-[100svh] w-full overflow-hidden bg-primary">
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          src="https://videos.pexels.com/video-files/6867870/6867870-hd_1920_1080_30fps.mp4"
+          poster="https://images.pexels.com/videos/6867870/bike-bike-delivery-black-black-guy-6867870.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-hidden="true"
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/70"
+        />
+        <div className="relative z-10 mx-auto flex w-full max-w-3xl flex-1 flex-col items-center justify-center gap-6 px-4 py-16 text-center sm:px-6">
           <h1 className="text-center text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
             Arregla tu celular sin salir de casa.
           </h1>
           <HeroSearch />
         </div>
+        <a
+          href="https://www.pexels.com/video/guy-delivering-a-parcel-6867870/"
+          target="_blank"
+          rel="noreferrer"
+          className="absolute bottom-3 right-4 z-10 text-[11px] text-white/60 underline-offset-2 hover:text-white/90 hover:underline"
+        >
+          Video: Pexels
+        </a>
       </section>
 
       <section id="como-funciona" className="bg-surface">
@@ -128,22 +152,20 @@ export default function ClientsPage() {
         </div>
       </section>
 
-      <section className="border-y border-primary/10 bg-background">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 py-20 sm:px-6 sm:py-24">
+      <section className="overflow-hidden border-y border-primary/10 bg-background">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 pt-20 sm:px-6 sm:pt-24">
           <SectionHeading
             eyebrow="Reseñas comprobables"
             title="Clientes reales, talleres reales"
             description="Opiniones verificadas de reparaciones realizadas en talleres de la red."
           />
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-            {REVIEWS.map((review) => (
-              <ReviewCard key={review.name} review={review} />
-            ))}
-          </div>
+        </div>
+        <div className="w-full py-10 sm:py-12">
+          <ReviewsSlider reviews={REVIEWS} />
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-primary">
+      <section id="garantia" className="relative overflow-hidden bg-primary">
         <span
           aria-hidden="true"
           className="absolute -left-24 top-0 h-72 w-72 rounded-full bg-accent/15 blur-3xl"
