@@ -23,3 +23,12 @@
     @apply bg-accent text-primary;
   }
 }
+
+@keyframes reviews-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50% - 0.625rem));
+  }
+}

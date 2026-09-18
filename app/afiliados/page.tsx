@@ -91,9 +91,9 @@ const AFFILIATE_FAQS: FaqItem[] = [
 export default function AffiliatesPage() {
   return (
     <main className="flex flex-col">
-      <section className="bg-background">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-4 pb-12 pt-12 sm:px-6 sm:pt-16">
-          <div className="flex max-w-2xl flex-col gap-5">
+      <section className="relative overflow-hidden bg-background">
+        <div className="relative z-10 mx-auto w-full max-w-6xl px-4 pb-0 pt-28 sm:px-6 lg:flex lg:min-h-[620px] lg:items-center lg:pt-24">
+          <div className="flex max-w-2xl flex-col gap-5 pb-10 lg:w-[58%] lg:shrink-0 lg:py-16 lg:pr-8">
             <p className="inline-flex w-fit rounded-full bg-accent/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
               Red de talleres afiliados
             </p>
@@ -121,6 +121,42 @@ export default function AffiliatesPage() {
             </div>
           </div>
         </div>
+        <div className="relative h-80 sm:h-[420px] lg:absolute lg:inset-y-0 lg:right-0 lg:h-full lg:w-[40%]">
+            <img
+              src="https://images.pexels.com/photos/6755075/pexels-photo-6755075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+              alt="Técnico reparando un celular con destornillador en un taller"
+              loading="eager"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div
+              aria-hidden="true"
+              className="absolute inset-y-0 left-0 hidden w-28 bg-gradient-to-r from-background to-transparent lg:block"
+            />
+            <div className="absolute bottom-5 left-4 flex items-center gap-3 rounded-xl border border-primary/10 bg-surface px-4 py-3 shadow-[0_16px_32px_-20px_rgba(11,27,51,0.35)] sm:left-6">
+              <span
+                aria-hidden="true"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-cta text-sm font-extrabold text-cta-foreground"
+              >
+                4.9
+              </span>
+              <span className="flex flex-col">
+                <span className="text-sm font-bold text-primary">
+                  Reseñas comprobables
+                </span>
+                <span className="text-xs text-muted">
+                  Reputación verificada por trabajo
+                </span>
+              </span>
+            </div>
+            <a
+              href="https://www.pexels.com/photo/a-hand-fixing-an-electronic-device-using-screwdriver-6755075/"
+              target="_blank"
+              rel="noreferrer"
+              className="absolute bottom-2 right-3 text-[11px] text-white/70 underline-offset-2 hover:text-white hover:underline"
+            >
+              Foto: Pexels
+            </a>
+          </div>
       </section>
 
       <section className="bg-surface">

@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const NAV_LINKS = [
   { label: "Inicio", href: "/#inicio", underline: false },
@@ -12,6 +13,9 @@ const NAV_LINKS = [
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  // En páginas con hero claro (ej: /afiliados) el navbar arranca sólido para que se lea.
+  const solid = scrolled || pathname !== "/";
 
   useEffect(() => {
     const onScroll = () => {
@@ -28,14 +32,14 @@ export function SiteHeader() {
       <div
         aria-hidden="true"
         className={`absolute inset-0 bg-surface/95 shadow-sm backdrop-blur-md transition-all duration-500 ease-out ${
-          scrolled ? "translate-y-0 opacity-100" : "-translate-y-3 opacity-0"
+          solid ? "translate-y-0 opacity-100" : "-translate-y-3 opacity-0"
         }`}
       />
       <div className="relative mx-auto flex h-16 w-full max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
         <Link
           href="/"
           className={`text-xl font-extrabold tracking-tight transition-colors duration-300 ${
-            scrolled ? "text-primary" : "text-white"
+            solid ? "text-primary" : "text-white"
           }`}
         >
           Fixeado
@@ -46,7 +50,7 @@ export function SiteHeader() {
               key={link.href}
               href={link.href}
               className={`rounded-md px-3 py-2 text-sm font-medium transition-colors duration-300 ${
-                scrolled
+                solid
                   ? "text-muted hover:bg-background hover:text-primary"
                   : "text-white/90 hover:bg-white/10 hover:text-white"
               } ${link.underline ? "underline decoration-cta decoration-2 underline-offset-8" : ""}`}
@@ -66,7 +70,7 @@ export function SiteHeader() {
       <div
         aria-hidden="true"
         className={`absolute inset-x-0 bottom-0 h-px bg-primary/10 transition-opacity duration-500 ease-out ${
-          scrolled ? "opacity-100" : "opacity-0"
+          solid ? "opacity-100" : "opacity-0"
         }`}
       />
     </header>

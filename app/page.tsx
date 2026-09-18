@@ -61,29 +61,6 @@ const GUARANTEE_ITEMS = [
   "Talleres verificados y evaluados por clientes reales",
 ];
 
-const FAILURE_TYPES = [
-  {
-    title: "Pantalla",
-    description: "Roturas, táctil que no responde, líneas o manchas.",
-  },
-  {
-    title: "Batería",
-    description: "Se descarga rápido, se apaga sola o se hincha.",
-  },
-  {
-    title: "Carga",
-    description: "No carga, pin flojo o carga intermitente.",
-  },
-  {
-    title: "Agua",
-    description: "Contacto con líquidos, humedad o fallas posteriores.",
-  },
-  {
-    title: "Software",
-    description: "Lentitud, reinicios, fallas de sistema o virus.",
-  },
-];
-
 const FAQS: FaqItem[] = [
   {
     question: "¿Cómo funciona la recogida y el envío?",
@@ -204,41 +181,6 @@ export default function ClientsPage() {
             </Link>
           </div>
           <Checklist items={GUARANTEE_ITEMS} tone="dark" />
-        </div>
-      </section>
-
-      <section className="bg-background">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 py-20 sm:px-6 sm:py-24">
-          <SectionHeading
-            eyebrow="Fallas frecuentes"
-            title="Tipos de fallas comunes que reparamos"
-            description="Estas son las reparaciones más pedidas en la red de talleres."
-          />
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
-            {FAILURE_TYPES.map((failure, index) => (
-              <article
-                key={failure.title}
-                className="group flex flex-col gap-3 rounded-2xl border border-primary/10 bg-surface p-6 shadow-[0_1px_2px_rgba(11,27,51,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/20 hover:shadow-[0_16px_32px_-20px_rgba(11,27,51,0.35)]"
-              >
-                <span
-                  aria-hidden="true"
-                  className="h-1 w-10 rounded-full bg-cta transition-all duration-300 group-hover:w-14"
-                />
-                <span
-                  aria-hidden="true"
-                  className="text-xs font-extrabold tracking-[0.14em] text-muted/70"
-                >
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3 className="text-base font-bold text-primary">
-                  {failure.title}
-                </h3>
-                <p className="text-sm leading-6 text-muted">
-                  {failure.description}
-                </p>
-              </article>
-            ))}
-          </div>
         </div>
       </section>
 
