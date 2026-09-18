@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Search } from "lucide-react";
+import { Motorbike, Search, ShieldCheck } from "lucide-react";
 import { TextType } from "@/components/landing/text-type";
 
 const FAILURE_EXAMPLES = [
@@ -57,9 +57,16 @@ export function HeroSearch() {
           </div>
         )}
       </div>
-      <p className="mt-3 text-center text-sm text-white/90">
-        Búsqueda orientativa sin compromiso.
-      </p>
+      <div className="mt-3 flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-sm font-medium text-white/90">
+        <span className="inline-flex items-center gap-1.5">
+          <Motorbike aria-hidden="true" className="h-4 w-4" />
+          Recogida y entrega a domicilio
+        </span>
+        <span className="inline-flex items-center gap-1.5">
+          <ShieldCheck aria-hidden="true" className="h-4 w-4" />
+          Tu reparación protegida
+        </span>
+      </div>
     </form>
   );
 }
