@@ -60,6 +60,15 @@ export function SiteHeader() {
           </Link>
         </nav>
       </div>
+      {/* Píldora negra original en top; fade-out al scrollear (sin morph) */}
+      <div className="relative flex justify-center pb-1">
+        <div
+          aria-hidden="true"
+          className={`h-[3px] w-40 rounded-full bg-black shadow-[0_1px_2px_rgba(0,0,0,0.25)] transition-opacity duration-500 ease-out ${
+            scrolled ? "opacity-0" : "opacity-80"
+          }`}
+        />
+      </div>
       {/* Hairline inferior: solo fade de opacidad, sin morph de tamaño */}
       <div
         aria-hidden="true"
