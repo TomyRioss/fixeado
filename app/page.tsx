@@ -141,9 +141,10 @@ export default function ClientsPage() {
         </a>
       </section>
 
-      <section id="como-funciona" className="bg-surface">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 py-20 sm:px-6 sm:py-24">
+      <section id="como-funciona" className="scroll-mt-16 bg-primary">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-4 py-20 sm:px-6 sm:py-24">
           <SectionHeading
+            tone="dark"
             eyebrow="Cómo funciona"
             title="Reparar tu celular sin moverte de casa"
             description="Cuatro pasos simples desde el reporte hasta la devolución con garantía."
